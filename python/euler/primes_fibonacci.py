@@ -8,7 +8,7 @@ def primes():
           break
         
       else:
-       ListofPrimes.append(x);
+       ListofPrimes.append(x):
 
   return ListofPrimes
 
