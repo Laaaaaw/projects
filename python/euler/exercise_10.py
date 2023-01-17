@@ -8,14 +8,28 @@ def is_prime(n):
             return False
     return True
 
+def SieveOfEratosthenes(num):
+    prime = [True for i in range(num+1)]
+# boolean array
+    p = 2
+
+    while (p * p <= num):
+
+        if (prime[p] == True):
+  
+            for i in range(p * p, num+1, p):
+                prime[i] = False
+        p += 1
+
+    sum = 0
+
+    for p in range(2, num+1):
+        if prime[p]:
+            sum += p
+    return sum
 
 limit = 2000000
 
-sum = 2
 
-for i in range(2, limit):
-    if(i%2 != 0):
-        if(is_prime(i) == True):
-            sum += i
 
-print(sum)
+print(SieveOfEratosthenes(limit))
